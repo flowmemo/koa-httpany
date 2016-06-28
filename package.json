@@ -7,5 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "flowmemo",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "koa": "^2.0.0"
+  }
 }
