@@ -1,24 +1,26 @@
 'use strict'
 
 function anyStatus (ctx, next) {
-  const status = ctx.params.status
-  if (status === 'default') {
+  const status = ctx.query.status
+  if (status === 'default' || status === undefined) {
     return next()
   }
   try {
     ctx.status = parseInt(status)
   } catch (err) {
-    console.log(err)
+    console.error(err)
     ctx.status = 501
   }
   return next()
 }
 
-function anyHeaders (ctx, next) {
+function anyHeader (ctx, next) {
+  let query = JSON.parse(JSON.stringify(ctx.query))
+  delete query.status // not set 'status' field in header
   try {
-    ctx.set(ctx.query)
+    ctx.set(query)
   } catch (err) {
-    console.log(err)
+    console.error(err)
     ctx.status = 501
   }
   if (!ctx.get('Access-Control-Allow-Origin')) {
@@ -29,5 +31,5 @@ function anyHeaders (ctx, next) {
 
 module.exports = {
   anyStatus: anyStatus,
-  anyHeaders: anyHeaders
+  anyHeader: anyHeader
 }
