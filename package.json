@@ -1,13 +1,21 @@
 {
   "name": "koa-httpany",
-  "version": "0.1.0",
-  "description": "",
+  "version": "0.1.2",
+  "description": "response with arbitrary http status and headers based on query string",
+  "keywords": [
+    "koa",
+    "middleware"
+  ],
   "main": "index.js",
   "scripts": {
     "test": "nyc ava"
   },
   "author": "flowmemo",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/flowmemo/koa-httpany.git"
+  },
   "devDependencies": {
     "ava": "^0.15.2",
     "coveralls": "^2.11.9",
