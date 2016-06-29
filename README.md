@@ -4,6 +4,7 @@ Koa middleware that make your app response with arbitrary http status and header
 
 [![Travis](https://img.shields.io/travis/flowmemo/koa-httpany.svg?maxAge=2592000&style=flat-square)](https://travis-ci.org/flowmemo/koa-httpany)
 [![Coveralls branch](https://img.shields.io/coveralls/flowmemo/koa-httpany/master.svg?maxAge=2592000&style=flat-square)](https://coveralls.io/github/flowmemo/koa-httpany?branch=master)
+[![npm](https://img.shields.io/npm/v/koa-httpany.svg?maxAge=2592000&style=flat-square)](https://www.npmjs.com/package/koa-httpany)
 
 ## Installation
 ```shell
