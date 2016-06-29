@@ -1,6 +1,6 @@
 {
   "name": "koa-httpany",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "response with arbitrary http status and headers based on query string",
   "keywords": [
     "koa",
