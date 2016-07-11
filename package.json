@@ -1,6 +1,6 @@
 {
   "name": "koa-httpany",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "response with arbitrary http status and headers based on query string",
   "keywords": [
     "koa",
@@ -10,6 +10,14 @@
   "scripts": {
     "test": "nyc ava"
   },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "files": [
+    "index.js",
+    "README.md",
+    "example.js"
+  ],
   "author": "flowmemo",
   "license": "MIT",
   "repository": {
@@ -21,6 +29,6 @@
     "coveralls": "^2.11.9",
     "koa": "^2.0.0",
     "node-fetch": "^1.5.3",
-    "nyc": "^6.6.1"
+    "nyc": "^7.0.0"
   }
 }

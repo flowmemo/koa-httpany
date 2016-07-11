@@ -5,7 +5,9 @@ var app = new Koa()
 app.use(httpAny.anyStatus)
 app.use(httpAny.anyHeader)
 app.use((ctx, next) => {
+  const originStatus = ctx.status
   ctx.body = JSON.stringify(ctx, null, 2)
+  ctx.status = originStatus
   return next()
 })
 app.listen(3000)
