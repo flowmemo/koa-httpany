@@ -27,7 +27,7 @@
   "devDependencies": {
     "ava": "^0.15.2",
     "coveralls": "^2.11.9",
-    "koa": "^2.0.0",
+    "koa": "^1.2.0",
     "node-fetch": "^1.5.3",
     "nyc": "^7.0.0"
   }

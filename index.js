@@ -1,9 +1,10 @@
 'use strict'
 
-function anyStatus (ctx, next) {
+function * anyStatus (next) {
+  const ctx = this
   const status = ctx.query.status
   if (status === 'default' || status === undefined) {
-    return next()
+    return yield next
   }
   try {
     ctx.status = parseInt(status)
@@ -11,10 +12,11 @@ function anyStatus (ctx, next) {
     console.error(err)
     ctx.status = 501
   }
-  return next()
+  return yield next
 }
 
-function anyHeader (ctx, next) {
+function * anyHeader (next) {
+  const ctx = this
   let query = JSON.parse(JSON.stringify(ctx.query))
   delete query.status // not set 'status' field in header
   try {
@@ -26,7 +28,7 @@ function anyHeader (ctx, next) {
   if (!ctx.get('Access-Control-Allow-Origin')) {
     ctx.set('Access-Control-Allow-Origin', '*')
   }
-  return next()
+  return yield next
 }
 
 module.exports = {

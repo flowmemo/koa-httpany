@@ -2,17 +2,18 @@
 
 import test from 'ava'
 const fetch = require('node-fetch')
-const Koa = require('koa')
+const koa = require('koa')
 const http = require('http')
 const querystring = require('querystring')
 const httpAny = require('..')
 
-const app = new Koa()
+const app = koa()
 app.use(httpAny.anyStatus)
 app.use(httpAny.anyHeader)
-app.use((ctx, next) => {
+app.use(function * (next) {
+  const ctx = this
   ctx.body = '1'
-  return next()
+  return yield next
 })
 
 const PORT = 3000
