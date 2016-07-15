@@ -1,7 +1,8 @@
 # koa-httpany
 
 koa middleware that make your app response with arbitrary http status and headers, based on query string.
-Only support koa v2.x
+
+For koa 2.x support, see `master` branch.
 
 [![Travis](https://img.shields.io/travis/flowmemo/koa-httpany.svg?maxAge=2592000&style=flat-square)](https://travis-ci.org/flowmemo/koa-httpany)
 [![Coveralls branch](https://img.shields.io/coveralls/flowmemo/koa-httpany/master.svg?maxAge=2592000&style=flat-square)](https://coveralls.io/github/flowmemo/koa-httpany?branch=master)
@@ -16,14 +17,14 @@ $ npm install koa-httpany
 
 ```js
 'use strict'
-var Koa = require('koa')
+var koa = require('koa')
 var httpAny = require('.')
-var app = new Koa()
+var app = koa()
 app.use(httpAny.anyStatus)
 app.use(httpAny.anyHeader)
-app.use((ctx, next) => {
+app.use(function * (next) {
   ctx.body = JSON.stringify(ctx, null, 2)
-  return next()
+  return yield next
 })
 app.listen(3000)
 console.log('open http://localhost:3000/?status=201&foo=bar&answer=42 to see result')

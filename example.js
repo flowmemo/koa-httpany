@@ -1,7 +1,7 @@
 'use strict'
-var Koa = require('koa')
+var koa = require('koa')
 var httpAny = require('.')
-var app = new Koa()
+var app = koa()
 app.use(httpAny.anyStatus)
 app.use(httpAny.anyHeader)
 app.use(function * (next) {
