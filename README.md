@@ -1,7 +1,8 @@
 # koa-httpany
 
 koa middleware that make your app response with arbitrary http status and headers, based on query string.
-Only support koa v2.x
+
+ `master` branch is for koa v2. For koa 1.x support, see the `koa.v1` branch.
 
 [![Travis](https://img.shields.io/travis/flowmemo/koa-httpany.svg?maxAge=2592000&style=flat-square)](https://travis-ci.org/flowmemo/koa-httpany)
 [![Coveralls branch](https://img.shields.io/coveralls/flowmemo/koa-httpany/master.svg?maxAge=2592000&style=flat-square)](https://coveralls.io/github/flowmemo/koa-httpany?branch=master)
@@ -9,7 +10,7 @@ Only support koa v2.x
 
 ## Installation
 ```shell
-$ npm install koa-httpany
+$ npm install koa-httpany@next
 ```
 
 ## Example
