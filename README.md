@@ -1,6 +1,6 @@
 # koa-httpany
 
-koa middleware that make your app response with arbitrary http status and headers, based on query string.
+koa middleware that makes your app response with arbitrary http status and headers, based on user's query string.
 
  `master` branch is for koa v2. For koa 1.x support, see the `koa.v1` branch.
 
@@ -30,10 +30,10 @@ app.listen(3000)
 console.log('open http://localhost:3000/?status=201&foo=bar&answer=42 to see result')
 ```
 
-You can see that response http status is 201, and headers contains "foo: bar" and "answer: 42".
+You can see that response http status is 201, and headers contain "foo: bar" and "answer: 42".
 
 ## WARNING
-Don't use this middleware in production environment for safety considerations. 
+Don't use this middleware in a production environment for safety considerations. 
 
 ## License
 MIT © [flowmemo](http://weibo.com/flowmemo)
